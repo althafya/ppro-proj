@@ -20,4 +20,3 @@ Step 2:
 
 
 Trigger script ...
-
