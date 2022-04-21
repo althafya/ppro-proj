@@ -1,27 +1,30 @@
 const express = require('express')
 const app = express()
-const port = 8000
-const pg_pass = process.env.POSTGRES_PASSWORD
-
-
-app.get('/get', (req, res) => {
-    const { Client } = require('pg')
-    const client = new Client({
+const moment = require('moment')
+const { Client } = require('pg');
+const port = 8000;
+const cred = {
     user: 'postgres',
-    // having PG in the same name space the service entity need not to worry!
     host: 'pg-service',
     database: 'postgres',
-    // to handle dynamic configuration for db credential
-    password: pg_pass,
-    port: 5432,
-    })
-    client.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-    res.send("Connected!"); 
-    });
+    // dynamic pass per environment
+    password: process.env.POSTGRES_PASSWORD,
+    port: 5432
+}
+
+async function getdbval() {
+    const client = new Client(cred);
+    await client.connect();
+    const result = await client.query("select val from pprotble where id = 1");
+    await client.end();
+    return result;
+}
+
+app.get('/get', (req, res) => {
+        const output =  getdbval();
+        res.send(moment().valueOf() + ' => ' + output )
 })
 
 app.listen(port, () => {
-    console.log('Rest api is running')
+    console.log('Rest api is listening...')
 })

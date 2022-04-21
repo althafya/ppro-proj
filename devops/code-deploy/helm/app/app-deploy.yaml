@@ -25,4 +25,4 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: pg-secret
-                  key: pg-password 
+                  key: pg-password
