@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-deployment
+  labels:
+    app: pg
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pg
+  template:
+    metadata:
+      labels:
+        app: pg
+    spec:
+      containers:
+      - name: pg
+        image: postgres
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 5432
+        env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pg-secret
+                  key: pg-password 
