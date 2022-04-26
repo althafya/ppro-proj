@@ -5,7 +5,7 @@
 function install {
     echo "--- Start Installing minikube ---"
     # check minikube is already installed
-    minikube status |grep 'kubelet' 2> /dev/null
+    minikube status |grep 'kubelet: Running' 2> /dev/null
     if [ $? -eq 0 ];then
         echo "INFO: minikube is already installed!"
         alias kubectl="minikube kubectl --"

@@ -1,0 +1,19 @@
+meta:
+  app:
+    name: ppro-svc
+    replicaCount: 1
+    repository: ppro 
+    tag: 21
+    ports: 8000
+    autoscaling:
+      enabled: false 
+      minReplicas: 1
+      maxReplicas: 5
+    service:
+      type: ClusterIP 
+  database:
+    port: 5432
+
+
+
+  

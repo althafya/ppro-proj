@@ -1,0 +1,4 @@
+DB_USER: "postgres"
+DB_PASS: "devpass"
+DB_NAME: "postgres"
+DB_ENDPOINT: "pg-service"
