@@ -81,4 +81,4 @@ tolerations: []
 
 affinity: {}
 
-dbPass: "cGFzcwo="
+dbPass: cGFzcwo=

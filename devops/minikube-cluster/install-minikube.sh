@@ -9,11 +9,13 @@ function install {
     if [ $? -eq 0 ];then
         echo "INFO: minikube is already installed!"
         alias kubectl="minikube kubectl --"
+        return 1
     else 
         echo "INFO: Downloading minikube ..."
         curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-amd64
         minikube start 
         alias kubectl="minikube kubectl --"
+        return 0
     fi
     
 }

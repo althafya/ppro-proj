@@ -4,4 +4,4 @@ metadata:
   name: pg-secret
 type: Opaque
 data:
-  pg-password: {{ .Values.dbPass }}
+  pg-password: cGFzcwo=

@@ -1,4 +1,5 @@
 DB_USER: "postgres"
-DB_PASS: "prodpass"
+DB_PASS: "pass"
 DB_NAME: "postgres"
 DB_ENDPOINT: "pg-service"
+PORT: 8000
