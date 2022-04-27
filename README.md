@@ -12,7 +12,7 @@ localhost:8000/get <====> restapi Container <=====> Postgres Container
 
 Configurations are managed via individual service based, which would make easy for anyone to go ahead and make changes on config files instead of Source Code.
 
-- deploy -> devops -> configs -> service -> <environment> -> app-config.yaml
+- deploy -> devops -> configs -> service -> environment -> app-config.yaml
 
 -  app-config.yaml will be exposed inside app container. The same will be used by app (node js) code.
 
@@ -23,7 +23,7 @@ Configurations are managed via individual service based, which would make easy f
 - ppro-sample-service -> Dockerfile 
   
   ```
-  docker build -t <servicename>:latest .
+  docker build -t servicename:latest .
   ```
   
 
