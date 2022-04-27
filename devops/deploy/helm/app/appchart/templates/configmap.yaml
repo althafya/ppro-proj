@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.fullnameOverride }}-config
+data:
+  app-config.yaml: |-
+{{ .Files.Get "app-config.yaml" | indent 4}}
