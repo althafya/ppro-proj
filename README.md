@@ -8,6 +8,13 @@ This is a sample project with Node JS based restapi with Postgres as back-end ru
 localhost:8000/get <====> restapi Container <=====> Postgres Container
 ```
 
+### to access
+
+```
+curl localhost:8000/get (production)
+curl localhost:8001/get (dev)
+```
+
 ### Configs
 
 Configurations are managed via individual service based, which would make easy for anyone to go ahead and make changes on config files instead of Source Code.
