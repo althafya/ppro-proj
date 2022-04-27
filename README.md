@@ -3,7 +3,11 @@
 
 ### Project Description
 
-This is a sample project with Node JS based restapi with Postgres as Back-end running in a container.
+This is a sample project with Node JS based restapi with Postgres as back-end running in a container.
+
+- [] localhost:8000/get <====> restapi Container <=====> Postgres Container
+
+### 
 
 
 
