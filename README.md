@@ -16,7 +16,7 @@ Configurations are managed via individual service based, which would make easy f
 
 -  app-config.yaml will be exposed inside app container. The same will be used by app (node js) code.
 
-#### Build 
+### Build 
   
   Application Source code (Root path) will have Dockerfile 
   
@@ -27,7 +27,7 @@ Configurations are managed via individual service based, which would make easy f
   ```
   
 
-#### Deploy 
+### Deploy 
   
   for deployment, we are using helm charts which would handle 
   - deploy
@@ -47,7 +47,7 @@ Configurations are managed via individual service based, which would make easy f
   helm upgrade --install ppro-sample-service ./dbchart 
   ```
   
-#### Provision Entire Cluster 
+### Provision Entire Cluster 
   ```
   cd ppro-proj/devops/deploy/
   bash deploy-e2e-wrapper.sh 
