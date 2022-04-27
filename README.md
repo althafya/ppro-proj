@@ -4,8 +4,9 @@
 ### Project Description
 
 This is a sample project with Node JS based restapi with Postgres as back-end running in a container.
-
--  localhost:8000/get <====> restapi Container <=====> Postgres Container
+```
+localhost:8000/get <====> restapi Container <=====> Postgres Container
+```
 
 ### Configs
 
@@ -21,6 +22,10 @@ Configurations are managed via individual service based, which would make easy f
   
 - ppro-sample-service -> Dockerfile 
   
+  ```
+  docker build -t <servicename>:latest .
+  ```
+  
 
 #### Deploy 
   
@@ -31,6 +36,16 @@ Configurations are managed via individual service based, which would make easy f
   - HPA 
   
   in order to run helm charts we could simply update values.yaml to have dynamic args for environment specific.
+  
+  ```
+  cd ppro-proj/devops/deploy/helm/app
+  helm upgrade --install ppro-sample-service ./appchart 
+  ```
+  
+  ```
+  cd ppro-proj/devops/deploy/helm/db 
+  helm upgrade --install ppro-sample-service ./dbchart 
+  ```
   
 #### Provision Entire Cluster 
   ```
